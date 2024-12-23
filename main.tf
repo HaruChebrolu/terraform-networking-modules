@@ -8,45 +8,46 @@ module "vpc" {
   name       = "Apical-Ptod-VPC"
 }
 
+
 module "subnet" {
   source = "./modules/subnet"
   vpc_id = module.vpc.vpc_id
   subnets = {
     subnet1 = {
-      cidr_block = "10.0.1.0/24"
-      name       = "subnet-one"
+      cidr_block = "10.101.128.0/28"
+      name       = "apical-prod-transit-Subnet-private-ap-southeast-1a"
     },
     subnet2 = {
-      cidr_block = "10.0.2.0/24"
-      name       = "subnet-two"
+      cidr_block = "10.101.128.16/28"
+      name       = "apical-prod-transit-Subnet-private-ap-southeast-1b "
     },
     subnet3 = {
-      cidr_block = "10.0.3.0/24"
-      name       = "subnet-three"
+      name = "apical-prod-transit-Subnet-private-ap-southeast-1c"
+      cidr_block       = "10.101.128.32/28"
     },
     subnet4 = {
-      cidr_block = "10.0.4.0/24"
-      name       = "subnet-four"
+      cidr_block = "10.101.132.0/22"
+      name       = "apical-prod-workload-Subnet-private-ap-southeast-1a"
     },
     subnet5 = {
-      cidr_block = "10.0.5.0/24"
-      name       = "subnet-five"
+      cidr_block = "10.101.136.0/22"
+      name       = "apical-prod-workload-Subnet-private-ap-southeast-1b"
     },
     subnet6 = {
-      cidr_block = "10.0.6.0/24"
-      name       = "subnet-six"
+      cidr_block = "10.101.140.0/22"
+      name       = "apical-prod-workload-Subnet-private-ap-southeast-1c"
     },
     subnet7 = {
-      cidr_block = "10.0.7.0/24"
-      name       = "subnet-seven"
+      cidr_block = "10.101.144.0/25"
+      name       = "apical-prod-integration-Subnet-private-ap-southeast-1a"
     },
     subnet8 = {
-      cidr_block = "10.0.8.0/24"
-      name       = "subnet-eight"
+      cidr_block = "10.101.144.128/25"
+      name       = "apical-prod-integration-Subnet-private-ap-southeast-1b"
     },
     subnet9 = {
-      cidr_block = "10.0.9.0/24"
-      name       = "subnet-nine"
+      cidr_block = "10.101.145.0/25"
+      name       = "apical-prod-integration-Subnet-private-ap-southeast-1c"
     }
   }
 }
